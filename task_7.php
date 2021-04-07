@@ -1,3 +1,9 @@
+<?
+require_once "config/db.php";
+require_once "config/settings.php";
+$people=new DB($settings);
+$items=$people->getAll("people");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,51 +23,6 @@
     <link rel="stylesheet" media="screen, print" href="css/fa-brands.css">
     <link rel="stylesheet" media="screen, print" href="css/fa-regular.css">
 </head>
-<?php
-
-$items = [
-    [
-        "img_src" => "sunny.png",
-        "img_alt" => "Sunny A.",
-        "name" => "Sunny A. (UI/UX Expert)",
-        "prof" => "Lead Author",
-        "twitter_link" => "myplaneticket",
-        "bootstrap_user" => "myorange",
-        "bootstrap_title" => "Sunny",
-        "isBanned"=>false
-    ],
-    [
-        "img_src" => "josh.png",
-        "img_alt" => "Jos K.",
-        "name" => "Jos K. (ASP.NET Developer)",
-        "prof" => " Partner &amp; Contributor",
-        "twitter_link" => "atlantez",
-        "bootstrap_user" => "Walapa",
-        "bootstrap_title" => "Contact Jos",
-        "isBanned"=>false
-    ],
-    [
-        "img_src" => "jovanni.png",
-        "img_alt" => "Jovanni Lo",
-        "name" => "Jovanni L. (PHP Developer)",
-        "prof" => "Partner &amp; Contributor",
-        "twitter_link" => "lodev09",
-        "bootstrap_user" => "lodev09",
-        "bootstrap_title" => "Contact Jovanni",
-        "isBanned"=>true
-    ],
-    [
-        "img_src" => "roberto.png",
-        "img_alt" => "Jovanni Lo",
-        "name" => "Roberto R. (Rails Developer)",
-        "prof" => "Partner &amp; Contributor",
-        "twitter_link" => "sildur",
-        "bootstrap_user" => "sildur",
-        "bootstrap_title" => "Contact Roberto",
-        "isBanned"=>true
-    ],
-]
-?>
 <body class="mod-bg-1 mod-nav-link ">
 <main id="js-page-content" role="main" class="page-content">
     <div class="col-md-6">
