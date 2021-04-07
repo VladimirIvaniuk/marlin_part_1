@@ -28,7 +28,7 @@ $items = [
         "twitter_link" => "myplaneticket",
         "bootstrap_user" => "myorange",
         "bootstrap_title" => "Sunny",
-        "isBaned"=>false
+        "isBanned"=>false
     ],
     [
         "img_src" => "josh.png",
@@ -38,7 +38,7 @@ $items = [
         "twitter_link" => "atlantez",
         "bootstrap_user" => "Walapa",
         "bootstrap_title" => "Contact Jos",
-        "isBaned"=>false
+        "isBanned"=>false
     ],
     [
         "img_src" => "jovanni.png",
@@ -48,7 +48,7 @@ $items = [
         "twitter_link" => "lodev09",
         "bootstrap_user" => "lodev09",
         "bootstrap_title" => "Contact Jovanni",
-        "isBaned"=>true
+        "isBanned"=>true
     ],
     [
         "img_src" => "roberto.png",
@@ -58,7 +58,7 @@ $items = [
         "twitter_link" => "sildur",
         "bootstrap_user" => "sildur",
         "bootstrap_title" => "Contact Roberto",
-        "isBaned"=>true
+        "isBanned"=>true
     ],
 ]
 ?>
@@ -81,7 +81,7 @@ $items = [
                 <div class="panel-content">
                     <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
                         <?foreach ($items as $item):?>
-                            <div class="<?=($item["isBaned"])?"banned ":""?>rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
+                            <div class="<?=($item["isBanned"])?"banned ":""?>rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
                                 <img src="img/demo/authors/<?=$item['img_src']?>" alt="<?=$item['img_alt']?>"
                                      class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
                                 <div class="ml-2 mr-3">
