@@ -1,8 +1,13 @@
 <?php
-require_once "config/db.php";
-require_once "config/settings.php";
-$db=new DB($settings);
-$tasks=$db->getAll("tasks");
+//require_once "config/db.php";
+//require_once "config/settings.php";
+//$db=new DB($settings);
+//$tasks=$db->getAll("tasks");
+$pdo=new PDO('mysql:host=localhost; dbname=marlin_part_1;', "root", "root");
+$statement=$pdo->prepare("select * from tasks");
+$statement->execute();
+$tasks=$statement->fetchAll(PDO::FETCH_ASSOC);
+//var_dump($tasks);die;
 ?>
 <!DOCTYPE html>
 <html lang="en">
