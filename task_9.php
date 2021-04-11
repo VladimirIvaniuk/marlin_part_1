@@ -1,8 +1,13 @@
 <?php
-require_once "config/db.php";
-require_once "config/settings.php";
-$db=new DB($settings);
-$tasks=$db->getAll("my_table");
+//require_once "config/db.php";
+//require_once "config/settings.php";
+//$db=new DB($settings);
+//$tasks=$db->getAll("my_table");
+$pdo=new PDO('mysql:host=localhost; dbname=marlin_part_1;', "root", "root");
+$statement=$pdo->prepare("select * from tasks");
+$statement->execute();
+$tasks=$statement->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,11 +52,11 @@ $tasks=$db->getAll("my_table");
                                         <button class="btn btn-success mt-3" type="submit">Submit</button>
                                     </form>
                                 </div>
-                                <?foreach ($tasks as $task):?>
-                                    <div>
-                                        <p><?=$task["text"]?></p>
-                                    </div>
-                                <?endforeach;?>
+<!--                                --><?//foreach ($tasks as $task):?>
+<!--                                    <div>-->
+<!--                                        <p>--><?//=$task["text"]?><!--</p>-->
+<!--                                    </div>-->
+<!--                                --><?//endforeach;?>
                             </div>
 
                         </div>
