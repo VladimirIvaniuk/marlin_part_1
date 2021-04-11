@@ -19,6 +19,13 @@ class DB{
         $result = $statement->execute($data);
         return $result;
     }
+    function getOne($table, $data){
+        $sql ="SELECT * FROM $table WHERE text = :text";
+        $statement=$this->pdo->prepare($sql);
+        $statement->execute($data);
+        $task=$statement->fetch(PDO::FETCH_ASSOC);
+        return $task;
+    }
 }
 
 
