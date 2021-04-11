@@ -13,6 +13,12 @@ class DB{
         $result=$statement->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+    function Add($table, $data){
+        $sql ="INSERT INTO $table (text) VALUE (:text)";
+        $statement=$this->pdo->prepare($sql);
+        $result = $statement->execute($data);
+        return $result;
+    }
 }
 
 
